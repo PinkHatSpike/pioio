@@ -34,7 +34,7 @@ Example: IOIOBlink.pde
     PIOIOManager ioioManager = new PIOIOManager(this);
 
     void setup() {
-      ioioManager.start();
+        ioioManager.start();
     }
 
     void draw() {
@@ -45,14 +45,14 @@ Example: IOIOBlink.pde
     boolean state = false;
 
     void ioioSetup(IOIO ioio) throws ConnectionLostException {
-      led = ioio.openDigitalOutput(IOIO.LED_PIN, true);
+        led = ioio.openDigitalOutput(IOIO.LED_PIN, true);
     }
 
     void ioioLoop(IOIO ioio) throws ConnectionLostException {
         led.write(state);
         state = !state;
         try {
-          Thread.sleep(1000);
+            Thread.sleep(1000);
         }
         catch (InterruptedException e) {
 
