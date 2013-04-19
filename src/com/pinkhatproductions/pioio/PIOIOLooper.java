@@ -1,6 +1,8 @@
 package com.pinkhatproductions.pioio;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
+
 import ioio.lib.api.IOIO;
 import ioio.lib.util.IOIOLooper;
 import ioio.lib.util.BaseIOIOLooper;
