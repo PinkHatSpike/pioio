@@ -8,7 +8,8 @@ import ioio.lib.android.accessory.*;
 import processing.core.PApplet;
 
 public class PIOIOManager extends IOIOAndroidApplicationHelper {
-  public PIOIOManager(PApplet wrapper, IOIOLooperProvider provider) {
-    super(wrapper, provider);
-  }
+    private static final String TAG = "PIOIOManager";
+    public PIOIOManager(PApplet wrapper, IOIOLooperProvider provider) {
+        super(wrapper, provider);
+    }
 }
