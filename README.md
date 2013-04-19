@@ -5,15 +5,15 @@ IOIO Library for Processing
 
 the aim of this library is to make using the IOIO development board in Processing's Android mode as simple as possible, cutting down as much boilerplate code as possible.
 
-inspiration from
+inspiration from  
 [How to use Processing in Android mode with the IOIO board](http://benatwork.cc/how-to-use-processing-in-android-mode-with-the-ioio-board/)
 
-and of course
-[IOIO](https://github.com/ytai/ioio/wiki)
-[Processing](http://processing.org/)
+and of course  
+[IOIO](https://github.com/ytai/ioio/wiki)  
+[Processing](http://processing.org/)  
 
-Example: IOIOBlink
-------------------
+Example: IOIOBlink.pde
+----------------------
 <code>
     import ioio.lib.spi.*;
     import ioio.lib.api.*;
