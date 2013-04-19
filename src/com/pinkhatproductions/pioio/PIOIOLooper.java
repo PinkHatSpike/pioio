@@ -29,13 +29,16 @@ public class PIOIOLooper extends BaseIOIOLooper {
             _ioioLoop = _applet.getClass().getMethod("ioioLoop", cArg);
         }
         catch(NoSuchMethodException e) {
-            Log.e(TAG, "NoSuchMethodException: " + e);
+            Log.e(TAG, e.toString());
+            throw new RuntimeException("could not find defined function 'void ioioSetup(IOIO ioio)' and/or 'void ioioLoop(IOIO ioio)' (" + e.toString() + ")");
         }
         catch(NullPointerException e) {
-            Log.e(TAG, "NullPointerException: " + e);
+            Log.e(TAG, e.toString());
+            throw new RuntimeException(e);
         }
         catch(SecurityException e) {
-            Log.e(TAG, "NullPointerException: " + e);
+            Log.e(TAG, e.toString());
+            throw new RuntimeException(e);
         } 
     }
 
@@ -45,13 +48,16 @@ public class PIOIOLooper extends BaseIOIOLooper {
             _ioioSetup.invoke(_applet, ioio_);
         }
         catch (IllegalArgumentException e) {
-            Log.e(TAG, "setup: IllegalArgumentException: " + e);
+            Log.e(TAG, e.toString());
+            throw new RuntimeException(e);
         }
         catch (IllegalAccessException e) {
-            Log.e(TAG, "setup: IllegalAccessException: " + e);
+            Log.e(TAG, e.toString());
+            throw new RuntimeException(e);
         }
         catch (InvocationTargetException e) {
-            Log.e(TAG, "setup: InvocationTargetException: " + e);
+            Log.e(TAG, e.toString());
+            throw new RuntimeException(e);
         }
     }
 
@@ -61,13 +67,16 @@ public class PIOIOLooper extends BaseIOIOLooper {
             _ioioLoop.invoke(_applet, ioio_);
         }
         catch (IllegalArgumentException e) {
-            Log.e(TAG, "loop: IllegalArgumentException: " + e);
+            Log.e(TAG, e.toString());
+            throw new RuntimeException(e);
         }
         catch (IllegalAccessException e) {
-            Log.e(TAG, "loop: IllegalAccessException: " + e);
+            Log.e(TAG, e.toString());
+            throw new RuntimeException(e);
         }
         catch (InvocationTargetException e) {
-            Log.e(TAG, "loop: InvocationTargetException: " + e);
+            Log.e(TAG, e.toString());
+            throw new RuntimeException(e);
         }
     }
 }
