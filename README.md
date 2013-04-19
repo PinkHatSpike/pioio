@@ -12,6 +12,8 @@ inspiration from
 and of course  
 [IOIO](https://github.com/ytai/ioio/wiki) and [Processing](http://processing.org/)  
 
+currently built on top of IOIOLib v3.26 (App-IOIO0326)  
+
 Example: IOIOBlink.pde
 ----------------------
 <code>
