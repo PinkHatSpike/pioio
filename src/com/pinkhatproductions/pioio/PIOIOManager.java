@@ -10,7 +10,11 @@ import processing.core.PApplet;
 public class PIOIOManager extends IOIOAndroidApplicationHelper {
     private static final String TAG = "PIOIOManager";
     
-    public PIOIOManager(PApplet wrapper, IOIOLooperProvider provider) {
+    protected PIOIOManager(PApplet wrapper, IOIOLooperProvider provider) {
         super(wrapper, provider);
+    }
+    
+    public static PIOIOManager newManager(PApplet applet) {
+        return new PIOIOManager(applet, new PIOIOLooperProvider(applet));
     }
 }
