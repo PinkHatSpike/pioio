@@ -6,6 +6,6 @@ public class PIOIOManagerFactory {
     private static final String TAG = "PIOIOManagerFactory";
     
     public static PIOIOManager manager(PApplet applet) {
-        return new PIOIOManager(applet, new PIOIOLooperReflection(applet));
+        return new PIOIOManager(applet, new PIOIOLooperProvider(applet));
     }
 }

@@ -9,6 +9,7 @@ import processing.core.PApplet;
 
 public class PIOIOManager extends IOIOAndroidApplicationHelper {
     private static final String TAG = "PIOIOManager";
+    
     public PIOIOManager(PApplet wrapper, IOIOLooperProvider provider) {
         super(wrapper, provider);
     }
