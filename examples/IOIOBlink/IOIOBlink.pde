@@ -11,7 +11,7 @@ import ioio.lib.bluetooth.*;
 import ioio.lib.api.exception.*;
 import com.pinkhatproductions.pioio.*;
 
-PIOIOManager ioioManager = PIOIOManager.newManager(this);
+PIOIOManager ioioManager = new PIOIOManager(this);
 
 void setup() {
   ioioManager.start();
