@@ -32,7 +32,7 @@ public class PIOIOLooper extends BaseIOIOLooper {
         }
         catch(NoSuchMethodException e) {
             Log.e(TAG, e.toString());
-            throw new RuntimeException("could not find defined function 'void ioioSetup(IOIO ioio)' and/or 'void ioioLoop(IOIO ioio)' (" + e.toString() + ")");
+            throw new RuntimeException("could not find defined function 'void ioioSetup(IOIO ioio)' and/or 'void ioioLoop(IOIO ioio)' []" + e.toString(), e);
         }
         catch(NullPointerException e) {
             Log.e(TAG, e.toString());
