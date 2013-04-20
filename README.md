@@ -4,7 +4,7 @@ pioio
 IOIO Library for Processing
 
 the aim of this library is to make using the IOIO development board in Processing's Android mode as simple as possible, cutting down as much boilerplate code as i can.
-in short, you only need to instantiate a <code>PIOIOManager</code> and define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
+in short, you only need to instantiate a <code>PIOIOManager</code> (and <code>.start()</code> it) and define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
 
 inspiration from  
 [How to use Processing in Android mode with the IOIO board](http://benatwork.cc/how-to-use-processing-in-android-mode-with-the-ioio-board/)
