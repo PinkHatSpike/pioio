@@ -9,7 +9,8 @@ inspiration from
 [How to use Processing in Android mode with the IOIO board](http://benatwork.cc/how-to-use-processing-in-android-mode-with-the-ioio-board/)
 
 and of course  
-[IOIO](https://github.com/ytai/ioio/wiki) and [Processing](http://processing.org/)
+* [IOIO](https://github.com/ytai/ioio/wiki)
+* [Processing](http://processing.org/)
 
 currently built on top of IOIOLib v3.26 (App-IOIO0326)  
 tested on a [Droidalyzer](http://droidalyzer.com/) in ADB over USB cable and over a Bluetooth Dongle
