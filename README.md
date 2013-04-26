@@ -20,7 +20,8 @@ How to use
 1. Instantiate a PIOIOManager: <code>PIOIOManager ioioManager = new PIOIOManager(this);</code>
 2. start it: <code> ioioManager.start();</code>
 3. define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
-4. Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.
+4. Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.  
+
 Example: IOIOBlink.pde
 ----------------------
 <code>
