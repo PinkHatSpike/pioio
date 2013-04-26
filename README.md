@@ -28,7 +28,7 @@ How to use
 Example: IOIOBlink.pde
 ----------------------
 <code>
-    
+
     import ioio.lib.spi.*;
     import ioio.lib.api.*;
     import ioio.lib.accessory.*;
