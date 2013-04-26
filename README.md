@@ -3,7 +3,7 @@ pioio
 
 IOIO Library for Processing
 
-the aim of this library is to make using the IOIO development board in Processing's Android mode simple as, cutting down as much boilerplate code as possible.
+the aim of this library is to make using the IOIO development board in Processing's Android mode simple, cutting down as much boilerplate code as possible.
 
 inspiration from 
 * [How to use Processing in Android mode with the IOIO board](http://benatwork.cc/how-to-use-processing-in-android-mode-with-the-ioio-board/)
