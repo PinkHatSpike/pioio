@@ -12,7 +12,7 @@ and of course
 * [IOIO](https://github.com/ytai/ioio/wiki)
 * [Processing](http://processing.org/)
 
-currently built on top of IOIOLib v3.26 (App-IOIO0326)  and Processing 2.0b8
+currently built on top of IOIOLib v3.26 (App-IOIO0326)  and Processing 2.0b8  
 tested on a [Droidalyzer](http://droidalyzer.com/) in ADB over USB cable and over a Bluetooth Dongle
 
 How to use
