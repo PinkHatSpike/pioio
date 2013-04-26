@@ -16,8 +16,8 @@ tested on a [Droidalyzer](http://droidalyzer.com/) in ADB over USB cable and ove
 
 How to use
 ----------
-1. Instantiate a <code>PIOIOManager</code>: <code>PIOIOManager ioioManager = new PIOIOManager(this);</code>
-2. <code>.start()</code> it: <code> ioioManager.start();</code>
+1. Instantiate a PIOIOManager: <code>PIOIOManager ioioManager = new PIOIOManager(this);</code>
+2. start it: <code> ioioManager.start();</code>
 3. define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
 
 Example: IOIOBlink.pde
