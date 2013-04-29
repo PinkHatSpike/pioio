@@ -31,7 +31,7 @@ void setup(){
 void draw() {
   background(0);
   DecimalFormat df = new DecimalFormat("#.00");
-  text("" + df.format(batteryVoltage) + "v", displayWidth/2, displayHeight/2);
+  text("" + df.format(batteryVoltage) + "v", width/2, height/2);
 }
 
 void ioioSetup(IOIO ioio) throws ConnectionLostException {

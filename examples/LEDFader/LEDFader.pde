@@ -26,14 +26,14 @@ void setup() {
 
 void draw() {
   fill(dutyCycle*255, dutyCycle*255, 0);
-  rect(0, 0, displayWidth, displayHeight);
+  rect(0, 0, width, height);
   
   fill(255);
-  text("Touch Me", displayWidth/2, displayHeight/2);
+  text("Touch Me", width/2, height/2);
 }
 
 void mousePressed() {
-  dutyCycle = constrain(mouseX / (float)displayWidth, 0.0, 1.0); 
+  dutyCycle = constrain(mouseX / (float)width, 0.0, 1.0); 
 }
 
 void mouseDragged() {

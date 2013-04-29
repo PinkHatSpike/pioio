@@ -27,7 +27,7 @@ void setup() {
 void draw() {
   background(0x80);
   int size = state ? 600 : 300;
-  rect(displayWidth/2, displayHeight/2, size, size);
+  rect(width/2, height/2, size, size);
 }
 
 void mousePressed() {

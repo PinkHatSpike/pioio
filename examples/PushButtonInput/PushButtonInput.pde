@@ -40,7 +40,7 @@ void draw() {
     fill(200);
   }
   
-  ellipse(displayWidth/2, displayHeight/2, 500, 500);
+  ellipse(width/2, height/2, 500, 500);
 }
 
 void ioioSetup(IOIO ioio) throws ConnectionLostException {
