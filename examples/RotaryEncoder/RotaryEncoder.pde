@@ -12,19 +12,19 @@ import ioio.lib.api.exception.*;
 import com.pinkhatproductions.pioio.*;
 
 /**
-  * adjust a counter with a rotary (quadrature) encoder
-  * (mine is an old computer mouse's scroll wheel, HOORAY FREE!)
-  * 
-  * WIRING
-  * ------
-  * common - GND
-  * A - pin 3
-  * B - pin 4
-  */
+ * adjust a counter with a rotary (quadrature) encoder
+ * (mine is an old computer mouse's scroll wheel, HOORAY FREE!)
+ * 
+ * WIRING
+ * ------
+ * common - GND
+ * A - pin 3
+ * B - pin 4
+ */
 
 PIOIOManager ioioManager = new PIOIOManager(this);
 Encoder encoder;
-int degrees = 0;
+int count = 0;
 
 void setup() {
   textAlign(CENTER, CENTER);
@@ -35,20 +35,25 @@ void setup() {
 
 void draw() {
   background(200);
-  
+
   stroke(0);
-  fill(map(abs(degrees%360), 0, 360, 0, 255));
-  
+  fill(map(abs(count%360), 0, 360, 0, 255));
+
+  // on this particular encoder, each 'cick' == 2 counts
+  // adjust so it's 1 degree per click
+  int degrees = count/2;
+
   int d = degrees%360;
-  if(d >= 0) {
+  if (d >= 0) {
     arc(width/2, height/2, 500, 500, PI, (float)(PI+Math.toRadians(d)), PIE);
   }
-  else if(d < 0){
+  else if (d < 0) {
     arc(width/2, height/2, 500, 500, (float)(PI+Math.toRadians(d)), PI, PIE);
   }
-  
+
   stroke(0);
   fill(255);
+
   text("" + degrees, width/2, height/2);
 }
 
@@ -56,9 +61,10 @@ void ioioSetup(IOIO ioio) throws ConnectionLostException {
   encoder = new Encoder(ioio, 3, 4);
   encoder.setListener(new EncoderListener() {
     public void onTick(int step) {
-      degrees += step;
+      count += step;
     }
-  });
+  }
+  );
   encoder.start();
 }
 
