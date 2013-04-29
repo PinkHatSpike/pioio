@@ -11,6 +11,17 @@ import ioio.lib.bluetooth.*;
 import ioio.lib.api.exception.*;
 import com.pinkhatproductions.pioio.*;
 
+/**
+  * adjust a counter with a rotary (quadrature) encoder
+  * (mine is an old computer mouse's scroll wheel, HOORAY FREE!)
+  * 
+  * WIRING
+  * ------
+  * common - GND
+  * A - pin 3
+  * B - pin 4
+  */
+
 PIOIOManager ioioManager = new PIOIOManager(this);
 Encoder encoder;
 int degrees = 0;
