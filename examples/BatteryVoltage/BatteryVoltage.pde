@@ -21,10 +21,10 @@ AnalogInput batteryIn;
 
 PIOIOManager ioioManager = new PIOIOManager(this); 
 
-void setup(){
+void setup() {
   textAlign(CENTER, CENTER);
   textSize(128);
-  
+
   ioioManager.start();
 }
 
@@ -44,6 +44,6 @@ void ioioLoop(IOIO ioio) throws ConnectionLostException {
     Thread.sleep(100);
   }
   catch (InterruptedException e) {
-
   }
 }
+

@@ -17,23 +17,23 @@ float dutyCycle = 0.0;
 
 void setup() {
   noStroke();
-  
+
   textAlign(CENTER, CENTER);
   textSize(128);
-  
+
   ioioManager.start();
 }
 
 void draw() {
   fill(dutyCycle*255, dutyCycle*255, 0);
   rect(0, 0, width, height);
-  
+
   fill(255);
   text("Touch Me", width/2, height/2);
 }
 
 void mousePressed() {
-  dutyCycle = constrain(mouseX / (float)width, 0.0, 1.0); 
+  dutyCycle = constrain(mouseX / (float)width, 0.0, 1.0);
 }
 
 void mouseDragged() {
@@ -46,11 +46,11 @@ void ioioSetup(IOIO ioio) throws ConnectionLostException {
 
 void ioioLoop(IOIO ioio) throws ConnectionLostException {
   led.setDutyCycle(1.0 - dutyCycle); // status LED is active low, hence the "1.0 -" 
-  
+
   try {
     Thread.sleep(20);
   }
   catch(InterruptedException e) {
-    
   }
 }
+

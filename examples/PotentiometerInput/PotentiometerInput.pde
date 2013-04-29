@@ -12,13 +12,13 @@ import ioio.lib.api.exception.*;
 import com.pinkhatproductions.pioio.*;
 
 /**
-  changes the background color based on potentiometer input
-  
-  WIRING
-  ------
-  left pot pin to ground
-  right pot pin to 3.3v
-  center pot pin to IOIO pin 39 
+ changes the background color based on potentiometer input
+ 
+ WIRING
+ ------
+ left pot pin to ground
+ right pot pin to 3.3v
+ center pot pin to IOIO pin 39 
  */
 
 PIOIOManager ioioManager = new PIOIOManager(this);
@@ -44,6 +44,6 @@ void ioioLoop(IOIO ioio) throws ConnectionLostException {
     Thread.sleep(20);
   }
   catch (InterruptedException e) {
-  
-  }    
+  }
 }
+

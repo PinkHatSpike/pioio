@@ -12,12 +12,12 @@ import ioio.lib.api.exception.*;
 import com.pinkhatproductions.pioio.*;
 
 /**
-  changes circle color based on tact button state
-  
-  WIRING
-  ------
-  push button hooked up to 3.3v and to pin 10 of IOIO
- */ 
+ changes circle color based on tact button state
+ 
+ WIRING
+ ------
+ push button hooked up to 3.3v and to pin 10 of IOIO
+ */
 
 PIOIOManager ioioManager = new PIOIOManager(this);
 DigitalInput pushButton;
@@ -28,18 +28,18 @@ void setup() {
   background(255);
   stroke(0);
   strokeWeight(5);
-  
+
   ioioManager.start();
 }
 
 void draw() {
-  if(pushButtonState) {
+  if (pushButtonState) {
     fill(0, 255, 0);
   }
   else {
     fill(200);
   }
-  
+
   ellipse(width/2, height/2, 500, 500);
 }
 
@@ -53,6 +53,6 @@ void ioioLoop(IOIO ioio) throws ConnectionLostException {
     Thread.sleep(20);
   }
   catch (InterruptedException e) {
-  
-  }    
+  }
 }
+

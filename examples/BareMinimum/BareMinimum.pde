@@ -18,11 +18,9 @@ void setup() {
 }
 
 void draw() {
-  
 }
 
 void ioioSetup(IOIO ioio) throws ConnectionLostException {
-
 }
 
 void ioioLoop(IOIO ioio) throws ConnectionLostException {
@@ -30,6 +28,6 @@ void ioioLoop(IOIO ioio) throws ConnectionLostException {
     Thread.sleep(20);
   }
   catch (InterruptedException e) {
-  
-  }    
+  }
 }
+

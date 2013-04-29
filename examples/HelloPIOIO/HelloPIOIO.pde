@@ -20,7 +20,7 @@ void setup() {
   rectMode(CENTER);
   stroke(0);
   fill(255, 255, 0);
-  
+
   ioioManager.start();
 }
 
@@ -39,11 +39,11 @@ void ioioSetup(IOIO ioio) throws ConnectionLostException {
 }
 
 void ioioLoop(IOIO ioio) throws ConnectionLostException {
-    led.write(!state); // status LED is active LOW
-    try {
-      Thread.sleep(20);
-    }
-    catch (InterruptedException e) {
-    
-    }
+  led.write(!state); // status LED is active LOW
+  try {
+    Thread.sleep(20);
+  }
+  catch (InterruptedException e) {
+  }
 }
+
