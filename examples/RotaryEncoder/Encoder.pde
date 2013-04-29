@@ -27,11 +27,6 @@ class Encoder extends Thread {
   public void cancel() {
     _cancel = true;
     interrupt();
-
-    _pinA.close();
-    _pinA = null;
-    _pinB.close();
-    _pinB = null;
   }
 
   public void setListener(EncoderListener l) {
@@ -79,6 +74,12 @@ class Encoder extends Thread {
         
       }
     }
+    
+    // canceled
+    _pinA.close();
+    _pinA = null;
+    _pinB.close();
+    _pinB = null;
   }
 }
 
