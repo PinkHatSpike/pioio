@@ -7,10 +7,9 @@ import ioio.lib.api.IOIO;
 import ioio.lib.util.IOIOLooper;
 import ioio.lib.util.BaseIOIOLooper;
 import ioio.lib.api.exception.ConnectionLostException;
+import ioio.lib.spi.Log;
 
 import processing.core.PApplet;
-
-import android.util.Log;
 
 public class PIOIOLooper extends BaseIOIOLooper {
     private static final String TAG = "PIOIOLooper";
