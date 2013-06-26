@@ -3,8 +3,10 @@ import ioio.lib.api.exception.*;
 import com.pinkhatproductions.pioio.pc.*;
 
 static {
-  System.setProperty("ioio.SerialPorts", "/dev/tty.IOIOBFEB-IOIO-App");
+  // leave commented out to auto-discover serial port (SLOW!)  
+  //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
 }
+
 boolean state = false;
 DigitalOutput led;
 
