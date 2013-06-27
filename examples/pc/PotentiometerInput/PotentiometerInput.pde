@@ -1,15 +1,11 @@
-import ioio.lib.spi.*;
 import ioio.lib.api.*;
-import ioio.lib.accessory.*;
-import ioio.lib.util.*;
-import ioio.lib.util.android.*;
-import ioio.lib.*;
-import ioio.lib.android.bluetooth.*;
-import ioio.lib.impl.*;
-import ioio.lib.android.accessory.*;
-import ioio.lib.bluetooth.*;
 import ioio.lib.api.exception.*;
-import com.pinkhatproductions.pioio.*;
+import com.pinkhatproductions.pioio.pc.*;
+
+static {
+  // leave commented out to auto-discover serial port (SLOW!)  
+  //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
+}
 
 /**
  changes the background color based on potentiometer input
@@ -26,6 +22,7 @@ AnalogInput potentiometer;
 float potValue = 0.0;
 
 void setup() {
+  size(700, 700);
   ioioManager.start();
 }
 
