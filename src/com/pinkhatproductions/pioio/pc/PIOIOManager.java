@@ -1,4 +1,4 @@
-package com.pinkhatproductions.pioio.pc;
+package com.pinkhatproductions.pioio;
 
 import com.pinkhatproductions.pioio.PIOIOLooperProvider;
 import ioio.lib.util.pc.IOIOPcApplicationHelper;
@@ -7,7 +7,7 @@ import ioio.lib.pc.*;
 import processing.core.PApplet;
 
 public class PIOIOManager extends IOIOPcApplicationHelper {
-    private static final String TAG = "PIOIOManager";
+    private static final String TAG = "PIOIOManagerPc";
     
     public PIOIOManager(IOIOLooperProvider provider) {
         super(provider);

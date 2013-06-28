@@ -1,4 +1,4 @@
-package com.pinkhatproductions.pioio.android;
+package com.pinkhatproductions.pioio;
 
 import com.pinkhatproductions.pioio.PIOIOLooperProvider;
 import ioio.lib.util.android.IOIOAndroidApplicationHelper;
@@ -9,7 +9,7 @@ import ioio.lib.android.accessory.*;
 import processing.core.PApplet;
 
 public class PIOIOManager extends IOIOAndroidApplicationHelper {
-    private static final String TAG = "PIOIOManager";
+    private static final String TAG = "PIOIOManagerAndroid";
     
     public PIOIOManager(PApplet wrapper, IOIOLooperProvider provider) {
         super(wrapper, provider);
