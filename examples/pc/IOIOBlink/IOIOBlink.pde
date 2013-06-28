@@ -1,6 +1,6 @@
 import ioio.lib.api.*;
 import ioio.lib.api.exception.*;
-import com.pinkhatproductions.pioio.pc.*;
+import com.pinkhatproductions.pioio.*;
 
 static {
   // leave commented out to auto-discover serial port (SLOW!)  
