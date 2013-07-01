@@ -2,6 +2,7 @@ import ioio.lib.api.*;
 import ioio.lib.api.exception.*;
 import com.pinkhatproductions.pioio.*;
 
+// for connection to pc host
 static {
   // leave commented out to auto-discover serial port (SLOW!)  
   //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
@@ -13,7 +14,7 @@ DigitalOutput led;
 PIOIOManager ioioManager = new PIOIOManager(this);
 
 void setup() {
-  size(700, 700);
+  size(displayWidth, displayHeight);
   rectMode(CENTER);
   stroke(0);
   fill(255, 255, 0);
