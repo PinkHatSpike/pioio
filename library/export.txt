@@ -1,0 +1,2 @@
+android=pioio.jar,android/pioio-android.jar,android/ioiolibandroid.jar,android/ioiolibbt.jar,android/ioiolibaccessory.jar
+#application=pioio.jar,application/pioio-pc.jar,application/ioiolibpc.jar,application/jna-3.5.1.jar,application/purejavacomm-0.0.11.jar

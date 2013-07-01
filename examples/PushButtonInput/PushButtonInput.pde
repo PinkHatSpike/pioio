@@ -1,15 +1,12 @@
-import ioio.lib.spi.*;
 import ioio.lib.api.*;
-import ioio.lib.accessory.*;
-import ioio.lib.util.*;
-import ioio.lib.util.android.*;
-import ioio.lib.*;
-import ioio.lib.android.bluetooth.*;
-import ioio.lib.impl.*;
-import ioio.lib.android.accessory.*;
-import ioio.lib.bluetooth.*;
 import ioio.lib.api.exception.*;
 import com.pinkhatproductions.pioio.*;
+
+// for connection to pc host
+static {
+  // leave commented out to auto-discover serial port (SLOW!)  
+  //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
+}
 
 /**
  changes circle color based on tact button state
@@ -24,6 +21,7 @@ DigitalInput pushButton;
 boolean pushButtonState = false;
 
 void setup() {
+  size(displayWidth, displayHeight);
   ellipseMode(CENTER);
   background(255);
   stroke(0);
