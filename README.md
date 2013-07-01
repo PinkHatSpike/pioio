@@ -3,7 +3,7 @@ pioio
 
 IOIO Library for Processing
 
-the aim of this library is to make using the IOIO development board in Processing's Android mode simple, cutting down as much boilerplate code as possible.
+The aim of this library is to make using the IOIO development board in Processing simple, cutting down as much boilerplate code as possible. Works in both Java mode (desktop sketches) and Android mode.
 
 inspiration from 
 * [How to use Processing in Android mode with the IOIO board](http://benatwork.cc/how-to-use-processing-in-android-mode-with-the-ioio-board/)
@@ -25,7 +25,7 @@ How to use
 1. Instantiate a PIOIOManager: <code>PIOIOManager ioioManager = new PIOIOManager(this);</code>
 2. start it: <code> ioioManager.start();</code>
 3. define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
-4. Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.  
+4. (Android Mode): Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.  
 
 Example: IOIOBlink.pde
 ----------------------
@@ -33,8 +33,9 @@ Example: IOIOBlink.pde
     
     import ioio.lib.api.*;
     import ioio.lib.api.exception.*;
-    import com.pinkhatproductions.pioio.pc.*;
-    
+    import com.pinkhatproductions.pioio.*;
+
+    // for connection to pc host
     static {
       // leave commented out to auto-discover serial port (SLOW!)  
       //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
@@ -43,6 +44,7 @@ Example: IOIOBlink.pde
     PIOIOManager ioioManager = new PIOIOManager(this);
 
     void setup() {
+      size(displayWidth, displayHeight);
       ioioManager.start();
     }
 
