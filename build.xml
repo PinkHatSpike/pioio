@@ -8,6 +8,13 @@
     <property name="src.pioio.ioiolibapi.dir" value="${src.pioio.top.dir}/ioio/lib/api" />
     <property name="src.pioio.ioiolibapiexception.dir" value="${src.pioio.ioiolibapi.dir}/exception" />
     
+    <property name="src.ioio.dir" value="src/App-IOIO0330" />
+    <property name="ioio.android.jar.dir" value="${src.ioio.dir}/IOIOLib/target/android/bin" />
+    <property name="ioio.android.accessory.jar.dir" value="${src.ioio.dir}/IOIOLibAccessory/bin" />
+    <property name="ioio.android.bt.jar.dir" value="${src.ioio.dir}/IOIOLibBT/bin" />
+    <property name="ioio.pc.jar.dir" value="${src.ioio.dir}/IOIOLib/target/pc/bin" />
+    <property name="ioio.pc.lib.jar.dir" value="${src.ioio.dir}/IOIOLib/target/pc/lib" />
+    
     <property name="classes.dir" value="classes" />
     <property name="jar.dir" value="jar" />
     <property name="p5.jar.dir" value="${jar.dir}/p5" />
@@ -27,8 +34,12 @@
         </fileset>
     </path>
     
+    <property environment="env" />
+    <condition property="sdk.dir" value="${env.ANDROID_HOME}">
+        <isset property="env.ANDROID_HOME" />
+    </condition>
     <path id="android.jar.include">
-        <fileset dir="/Users/spike/android-sdk-macosx/platforms/android-10">
+        <fileset dir="${sdk.dir}/platforms/android-10"> 
             <include name="android.jar" />
         </fileset>
         <fileset dir="${p5.jar.dir}">
@@ -37,19 +48,14 @@
     </path>
     
     <path id="ioio.pc.jar.include">
-        <fileset dir="${ioio.jar.dir}">
-            <include name="ioiolibpc.jar" />
-            <include name="jna-3.5.1.jar" />
-            <include name="purejavacomm-0.0.11.jar" />
-        </fileset>
+        <fileset dir="${ioio.pc.jar.dir}" includes="ioiolibpc.jar" />
+        <fileset dir="${ioio.pc.lib.jar.dir}" includes="*.*" />
     </path>
     
     <path id="ioio.android.jar.include">
-        <fileset dir="${ioio.jar.dir}">
-            <include name="ioiolibandroid.jar" />
-            <include name="ioiolibaccessory.jar" />
-            <include name="ioiolibbt.jar" />
-        </fileset>
+        <fileset dir="${ioio.android.jar.dir}" includes="ioiolibandroid.jar" />
+        <fileset dir="${ioio.android.accessory.jar.dir}" includes="ioiolibaccessory.jar" />
+        <fileset dir="${ioio.android.bt.jar.dir}" includes="ioiolibbt.jar" />
     </path>
     
     <path id="pioio.jar.include">
@@ -60,6 +66,7 @@
     
     <!-- clean -->
     <target name="clean">
+        <delete file="${ioio.pc.jar.dir}/ioiolibpc.jar" />
         <delete dir="${classes.dir}" failonerror="false" />
         <delete dir="${pioio.jar.dir}" failonerror="false" />
         <delete file="${library.dir}/pioio.jar" failonerror="false" />
@@ -70,7 +77,11 @@
     </target>
     
     <!-- common -->
-    <target name="compile.common">
+    <target name="jar.ioio.pc">
+        <jar destfile="${ioio.pc.jar.dir}/ioiolibpc.jar" basedir="${ioio.pc.jar.dir}" excludes="*.jar"/>
+    </target>
+    
+    <target name="compile.common" depends="jar.ioio.pc">
         <mkdir dir="${classes.dir}/common" />
         <javac srcdir="${src.pioio.common.dir}" destdir="${classes.dir}/common">
             <classpath>
@@ -106,6 +117,10 @@
     
     <!--- android -->
     <target name="compile.android" depends="compile.common,jar.common">
+        <fail
+            message="sdk.dir is missing. Make sure to to inject it through the ANDROID_HOME environment variable."
+            unless="sdk.dir"
+        />
         <mkdir dir="${classes.dir}/android" />
         <javac srcdir="${src.pioio.android.dir}" destdir="${classes.dir}/android">
             <classpath>
