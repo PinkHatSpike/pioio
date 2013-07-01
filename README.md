@@ -3,7 +3,7 @@ pioio
 
 IOIO Library for Processing
 
-The aim of this library is to make using the [IOIO hardware development board]((https://github.com/ytai/ioio/wiki) in [Processing](http://processing.org/) simple, cutting down as much boilerplate code as possible. Works in both Java mode (desktop sketches) and Android mode.
+The aim of this library is to make using the [IOIO hardware development board](https://github.com/ytai/ioio/wiki) in [Processing](http://processing.org/) simple, cutting down as much boilerplate code as possible. Works in both Java mode (desktop sketches) and Android mode.
 
 inspiration from 
 * [How to use Processing in Android mode with the IOIO board](http://benatwork.cc/how-to-use-processing-in-android-mode-with-the-ioio-board/)
