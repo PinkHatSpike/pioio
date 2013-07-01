@@ -1,19 +1,17 @@
-import ioio.lib.spi.*;
 import ioio.lib.api.*;
-import ioio.lib.accessory.*;
-import ioio.lib.util.*;
-import ioio.lib.util.android.*;
-import ioio.lib.*;
-import ioio.lib.android.bluetooth.*;
-import ioio.lib.impl.*;
-import ioio.lib.android.accessory.*;
-import ioio.lib.bluetooth.*;
 import ioio.lib.api.exception.*;
 import com.pinkhatproductions.pioio.*;
+
+// for connection to pc host
+static {
+  // leave commented out to auto-discover serial port (SLOW!)  
+  //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
+}
 
 PIOIOManager ioioManager = new PIOIOManager(this);
 
 void setup() {
+  size(displayWidth, displayHeight);
   ioioManager.start();
 }
 
