@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<project name="pioio" basedir="." default="install">
+    <property name="src.pioio.top.dir" value="src/pioio" />
+    <property name="src.pioio.pinkhatproductions.dir" value="${src.pioio.top.dir}/com/pinkhatproductions" />
+    <property name="src.pioio.common.dir" value="${src.pioio.pinkhatproductions.dir}/pioio" />
+    <property name="src.pioio.android.dir" value="${src.pioio.pinkhatproductions.dir}/android" />
+    <property name="src.pioio.pc.dir" value="${src.pioio.pinkhatproductions.dir}/pc" />
+    <property name="src.pioio.ioiolibapi.dir" value="${src.pioio.top.dir}/ioio/lib/api" />
+    <property name="src.pioio.ioiolibapiexception.dir" value="${src.pioio.ioiolibapi.dir}/exception" />
+    
+    <property name="classes.dir" value="classes" />
+    <property name="jar.dir" value="jar" />
+    <property name="p5.jar.dir" value="${jar.dir}/p5" />
+    <property name="ioio.jar.dir" value="${jar.dir}/ioio" />
+    <property name="pioio.jar.dir" value="${jar.dir}/pioio" />
+    
+    <property name="library.dir" value="library" />
+    <property name="library.android.dir" value="${library.dir}/android" />
+    <property name="library.linux.dir" value="${library.dir}/linux" />
+    <property name="library.macosx.dir" value="${library.dir}/macosx" />
+    <property name="library.windows.dir" value="${library.dir}/windows" />
+    
+    <!-- jar include paths -->
+    <path id="p5.jar.include">
+        <fileset dir="${p5.jar.dir}">
+            <include name="core.jar" />
+        </fileset>
+    </path>
+    
+    <path id="android.jar.include">
+        <fileset dir="/Users/spike/android-sdk-macosx/platforms/android-10">
+            <include name="android.jar" />
+        </fileset>
+        <fileset dir="${p5.jar.dir}">
+            <include name="android-core.zip" />
+        </fileset>
+    </path>
+    
+    <path id="ioio.pc.jar.include">
+        <fileset dir="${ioio.jar.dir}">
+            <include name="ioiolibpc.jar" />
+            <include name="jna-3.5.1.jar" />
+            <include name="purejavacomm-0.0.11.jar" />
+        </fileset>
+    </path>
+    
+    <path id="ioio.android.jar.include">
+        <fileset dir="${ioio.jar.dir}">
+            <include name="ioiolibandroid.jar" />
+            <include name="ioiolibaccessory.jar" />
+            <include name="ioiolibbt.jar" />
+        </fileset>
+    </path>
+    
+    <path id="pioio.jar.include">
+        <fileset dir="${pioio.jar.dir}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+    
+    <!-- clean -->
+    <target name="clean">
+        <delete dir="${classes.dir}" failonerror="false" />
+        <delete dir="${pioio.jar.dir}" failonerror="false" />
+        <delete file="${library.dir}/pioio.jar" failonerror="false" />
+        <delete dir="${library.android.dir}" failonerror="false" />
+        <delete dir="${library.linux.dir}" failonerror="false" />
+        <delete dir="${library.macosx.dir}" failonerror="false" />
+        <delete dir="${library.windows.dir}" failonerror="false" />
+    </target>
+    
+    <!-- common -->
+    <target name="compile.common">
+        <mkdir dir="${classes.dir}/common" />
+        <javac srcdir="${src.pioio.common.dir}" destdir="${classes.dir}/common">
+            <classpath>
+                <path refid="ioio.pc.jar.include" />
+                <path refid="p5.jar.include" />
+            </classpath>
+        </javac>
+        <javac srcdir="${src.pioio.ioiolibapi.dir}" destdir="${classes.dir}/common">
+            <classpath>
+                <path refid="ioio.pc.jar.include" />
+                <path refid="p5.jar.include" />
+            </classpath>
+        </javac>
+        <javac srcdir="${src.pioio.ioiolibapiexception.dir}" destdir="${classes.dir}/common">
+            <classpath>
+                <path refid="ioio.android.jar.include" />
+                <path refid="p5.jar.include" />
+            </classpath>
+        </javac>
+    </target>
+    
+    <target name="jar.common" depends="compile.common">
+        <mkdir dir="${pioio.jar.dir}" />
+        <jar destfile="${pioio.jar.dir}/pioio.jar" basedir="${classes.dir}/common" />
+    </target>
+    
+    <target name="install.common" depends="jar.common">
+        <mkdir dir="${library.dir}" />
+        <copy todir="${library.dir}">
+            <fileset dir="${pioio.jar.dir}" includes="pioio.jar" />
+        </copy>
+    </target>
+    
+    <!--- android -->
+    <target name="compile.android" depends="compile.common,jar.common">
+        <mkdir dir="${classes.dir}/android" />
+        <javac srcdir="${src.pioio.android.dir}" destdir="${classes.dir}/android">
+            <classpath>
+                <path refid="ioio.android.jar.include" />
+                <path refid="pioio.jar.include" />
+                <path refid="android.jar.include" />
+                <path refid="p5.jar.include" />
+            </classpath>
+        </javac>
+    </target>
+    
+    <target name="jar.android" depends="compile.android,jar.common">
+        <mkdir dir="${pioio.jar.dir}" />
+        <jar destfile="${pioio.jar.dir}/pioio-android.jar" basedir="${classes.dir}/android" />
+    </target>
+    
+    <target name="install.android" depends="install.common,jar.android">
+        <mkdir dir="${library.android.dir}" />
+        <copy todir="${library.android.dir}">
+            <path refid="ioio.android.jar.include" />
+            <fileset dir="${pioio.jar.dir}" includes="pioio-android.jar" />
+        </copy>
+    </target>
+    
+    <!-- pc -->
+    <target name="compile.pc" depends="compile.common,jar.common">
+        <mkdir dir="${classes.dir}/pc" />
+        <javac srcdir="${src.pioio.pc.dir}" destdir="${classes.dir}/pc">
+            <classpath>
+                <path refid="ioio.pc.jar.include" />
+                <path refid="pioio.jar.include" />
+                <path refid="p5.jar.include" />
+            </classpath>
+        </javac>
+    </target>
+    
+    <target name="jar.pc" depends="compile.pc,jar.common">
+        <mkdir dir="${pioio.jar.dir}" />
+        <jar destfile="${pioio.jar.dir}/pioio-pc.jar" basedir="${classes.dir}/pc" />
+    </target>
+    
+    <target name="install.pc" depends="install.common,jar.pc">
+        <mkdir dir="${library.linux.dir}" />
+        <copy todir="${library.linux.dir}">
+            <path refid="ioio.pc.jar.include" />
+            <fileset dir="${pioio.jar.dir}" includes="pioio-pc.jar" />
+        </copy>
+        
+        <mkdir dir="${library.macosx.dir}" />
+        <copy todir="${library.macosx.dir}">
+            <path refid="ioio.pc.jar.include" />
+        </copy>
+        
+        <mkdir dir="${library.windows.dir}" />
+        <copy todir="${library.windows.dir}">
+            <path refid="ioio.pc.jar.include" />
+        </copy>
+    </target>
+    
+    <!-- all -->
+    <target name="compile" depends="compile.common,compile.android,compile.pc" />
+    
+    <target name="jar" depends="jar.common,jar.android,jar.pc" />
+    
+    <target name="install" depends="install.common,install.android,install.pc" />
+    
+    <target name="help" />
+</project>
