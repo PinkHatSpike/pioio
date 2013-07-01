@@ -20,8 +20,15 @@ tested on
 * [Droidalyzer](http://droidalyzer.com/) in ADB (USB,Bluetooth Dongle)
 * [IOIO-OTG](https://www.sparkfun.com/products/11343) in ADB (USB,Bluetooth Dongle) and to a PC (USB, Bluetooth Dongle) (thank you Jordan of SFE for the board!)
 
+Install
+-------
+1. Download the [latest master zip](https://github.com/PinkHatSpike/pioio/archive/master.zip).
+2. Rename downloaded zip file to pioio.zip
+3. Copy folder to your sketchbook's library folder (see [How to Install a Contributed Library](http://wiki.processing.org/w/How_to_Install_a_Contributed_Library))
+
 How to use
 ----------
+
 1. Instantiate a PIOIOManager: <code>PIOIOManager ioioManager = new PIOIOManager(this);</code>
 2. start it: <code> ioioManager.start();</code>
 3. define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
