@@ -11,7 +11,6 @@ static {
 PIOIOManager ioioManager = new PIOIOManager(this);
 
 void setup() {
-  size(700, 700);
   ioioManager.start();
 }
 
