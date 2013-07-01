@@ -23,7 +23,7 @@ tested on
 Install
 -------
 1. Download the [latest master zip](https://github.com/PinkHatSpike/pioio/archive/master.zip).
-2. Rename downloaded zip file to pioio.zip
+2. Rename downloaded zip file to pioio.zip, and unzip it.
 3. Copy folder to your sketchbook's library folder (see [How to Install a Contributed Library](http://wiki.processing.org/w/How_to_Install_a_Contributed_Library))
 
 How to use
