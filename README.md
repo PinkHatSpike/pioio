@@ -18,10 +18,10 @@ currently built on top of
 
 tested devices and modes
 
-Device                                              | Android ADB            | Android Bluetooth | Android OpenAccessory | PC USB | PC Bluetooth
-----------------------------------------------------|:----------------------:|:-----------------:|:---------------------:|:------:|:------------
-[Droidalyzer](http://droidalyzer.com/)              | Yes (Android OS < 4.2) | Yes               | Not Tested            | N/A    | Yes 
-[IOIO-OTG](https://www.sparkfun.com/products/11343) | Yes (Android OS < 4.2) | Yes               | Not Tested            | Yes    | Yes
+Device                                                                                     | Android ADB            | Android Bluetooth | Android OpenAccessory | PC USB | PC Bluetooth
+-------------------------------------------------------------------------------------------|:----------------------:|:-----------------:|:---------------------:|:------:|:------------
+[Droidalyzer](http://droidalyzer.com) / [IOIO Mint](http://www.adafruit.com/products/885) | Yes (Android OS < 4.2) | Yes               | Not Tested            | N/A    | Yes 
+[IOIO-OTG](https://www.sparkfun.com/products/11343)                                        | Yes (Android OS < 4.2) | Yes               | Not Tested            | Yes    | Yes
 
 Install
 -------
