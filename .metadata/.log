@@ -197,3 +197,43 @@ Caused by: org.eclipse.core.internal.resources.ResourceException: File not found
 	at org.eclipse.core.internal.resources.File.getContents(File.java:278)
 	at com.android.ide.eclipse.adt.internal.build.builders.PostCompilerBuilder$JarBuilder.addFile(PostCompilerBuilder.java:779)
 	... 18 more
+!SESSION 2013-07-02 12:56:57.556 -----------------------------------------------
+eclipse.buildId=v22.0.1-685705
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -keyring /Users/spike/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.ide.eclipse.adt.package.product -keyring /Users/spike/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-07-02 12:57:04.485
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-02 12:57:17.513
+!MESSAGE Failed to write jar file /Users/spike/Box Documents/proj/Processing/libraries/pioio/src/App-IOIO0330/IOIOLib/target/android/bin/ioiolibandroid.jar
+!STACK 0
+com.android.sdklib.build.ApkCreationException: Failed to add L/IOIOLibAndroid/bin/classes/ioio/lib/api/AnalogInput.class
+	at com.android.ide.eclipse.adt.internal.build.builders.PostCompilerBuilder$JarBuilder.addFile(PostCompilerBuilder.java:783)
+	at com.android.ide.eclipse.adt.internal.build.builders.PostCompilerBuilder.writeClassFilesIntoJar(PostCompilerBuilder.java:901)
+	at com.android.ide.eclipse.adt.internal.build.builders.PostCompilerBuilder.writeClassFilesIntoJar(PostCompilerBuilder.java:898)
+	at com.android.ide.eclipse.adt.internal.build.builders.PostCompilerBuilder.writeClassFilesIntoJar(PostCompilerBuilder.java:898)
+	at com.android.ide.eclipse.adt.internal.build.builders.PostCompilerBuilder.writeClassFilesIntoJar(PostCompilerBuilder.java:898)
+	at com.android.ide.eclipse.adt.internal.build.builders.PostCompilerBuilder.writeLibraryPackage(PostCompilerBuilder.java:874)
+	at com.android.ide.eclipse.adt.internal.build.builders.PostCompilerBuilder.build(PostCompilerBuilder.java:398)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/IOIOLibAndroid/bin/classes/ioio/lib/api/AnalogInput.class'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:793)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:289)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:278)
+	at com.android.ide.eclipse.adt.internal.build.builders.PostCompilerBuilder$JarBuilder.addFile(PostCompilerBuilder.java:779)
+	... 18 more
