@@ -20,7 +20,7 @@ tested devices and modes
 
 Device                                                                                     | Android ADB            | Android Bluetooth | Android OpenAccessory | PC USB | PC Bluetooth
 -------------------------------------------------------------------------------------------|:----------------------:|:-----------------:|:---------------------:|:------:|:------------
-[IOIO](https://www.sparkfun.com/products/10585)                                            | Yes                    | Yes               | Not Tested            | N/A    | Yes
+[IOIO](https://www.sparkfun.com/products/10585)                                            | Yes (Android OS < 4.2) | Yes               | Not Tested            | N/A    | Yes
 [Droidalyzer](http://droidalyzer.com) / [IOIO Mint](http://www.adafruit.com/products/885)  | Yes (Android OS < 4.2) | Yes               | Not Tested            | N/A    | Yes 
 [IOIO-OTG](https://www.sparkfun.com/products/11343)                                        | Yes (Android OS < 4.2) | Yes               | Not Tested            | Yes    | Yes
 (thanks Jordan of SFE for the IOIO-OTG board!)
