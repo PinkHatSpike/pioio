@@ -17,7 +17,6 @@ currently built on top of
 * Processing 2.0
 
 tested devices and modes
-* 
 Device                                              | Android ADB            | Android Bluetooth | Android OpenAccessory | PC USB | PC Bluetooth
 ----------------------------------------------------|:----------------------:|:-----------------:|:---------------------:|:------:|:------------
 [Droidalyzer](http://droidalyzer.com/)              | Yes (Android OS < 4.2) | Yes               | Not Tested            | N/A    | Yes 
