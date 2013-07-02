@@ -16,9 +16,12 @@ currently built on top of
 * IOIOLib v3.30 (App-IOIO0330)
 * Processing 2.0
 
-tested on
-* [Droidalyzer](http://droidalyzer.com/) in ADB (USB,Bluetooth Dongle)
-* [IOIO-OTG](https://www.sparkfun.com/products/11343) in ADB (USB,Bluetooth Dongle) and to a PC (USB, Bluetooth Dongle) (thank you Jordan of SFE for the board!)
+tested devices and modes
+* 
+Device                                              | Android ADB            | Android Bluetooth | Android OpenAccessory | PC USB | PC Bluetooth
+----------------------------------------------------|:----------------------:|:-----------------:|:---------------------:|:------:|:------------
+[Droidalyzer](http://droidalyzer.com/)              | Yes (Android OS < 4.2) | Yes               | Not Tested            | N/A    | Yes 
+[IOIO-OTG](https://www.sparkfun.com/products/11343) | Yes (Android OS < 4.2) | Yes               | Not Tested            | Yes    | Yes
 
 Install
 -------
