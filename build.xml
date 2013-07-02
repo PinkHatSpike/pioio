@@ -172,11 +172,13 @@
         <mkdir dir="${library.macosx.dir}" />
         <copy todir="${library.macosx.dir}">
             <path refid="ioio.pc.jar.include" />
+            <fileset dir="${pioio.jar.dir}" includes="pioio-pc.jar" />
         </copy>
         
         <mkdir dir="${library.windows.dir}" />
         <copy todir="${library.windows.dir}">
             <path refid="ioio.pc.jar.include" />
+            <fileset dir="${pioio.jar.dir}" includes="pioio-pc.jar" />
         </copy>
     </target>
     
