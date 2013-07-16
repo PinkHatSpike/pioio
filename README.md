@@ -95,7 +95,7 @@ Example: IOIOBlink.pde
 
 License
 -------
-LGPL 3.0
+[LGPL 3.0](http://www.gnu.org/licenses/lgpl-3.0.html)
 
 <pre>
 /*
