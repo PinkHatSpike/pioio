@@ -97,7 +97,7 @@ License
 -------
 LGPL 
 <code>
-  
+
 /*
  * (C) Copyright 2012 Nuxeo SA (http://nuxeo.com/) and others.
  *
