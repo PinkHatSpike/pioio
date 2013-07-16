@@ -97,7 +97,6 @@ License
 -------
 LGPL
 
-(C) Copyright 2012 Nuxeo SA (http://nuxeo.com/) and others.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the GNU Lesser General Public License
 (LGPL) version 2.1 which accompanies this distribution, and is available at
