@@ -95,7 +95,7 @@ Example: IOIOBlink.pde
 
 License
 -------
-[LGPL 3.0](http://www.gnu.org/licenses/lgpl-3.0.html)
+pioio is licensed under [LGPL 3.0](http://www.gnu.org/licenses/lgpl-3.0.html)
 
 <pre>
 /*
@@ -118,3 +118,5 @@ License
       PinkHatSpike - spike@pinkhatproductions.com
 */
 </pre>
+
+pioio is built on top of [IOIOLib](https://github.com/ytai/ioio/wiki), [JNA](https://github.com/twall/jna), and [PureJavaComm](http://www.sparetimelabs.com/purejavacomm/purejavacomm.php), each of which carries its own license and terms.
