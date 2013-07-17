@@ -119,4 +119,4 @@ pioio is licensed under [LGPL 3.0](http://www.gnu.org/licenses/lgpl-3.0.html)
 */
 </pre>
 
-pioio is built on top of [IOIOLib](https://github.com/ytai/ioio/wiki), [JNA](https://github.com/twall/jna), and [PureJavaComm](http://www.sparetimelabs.com/purejavacomm/purejavacomm.php), each of which carries its own license and terms.
+pioio is built on top of [Processing](https://github.com/processing/processing), [Processing for Android](https://github.com/processing/processing-android), [IOIOLib](https://github.com/ytai/ioio/wiki), [JNA](https://github.com/twall/jna), and [PureJavaComm](http://www.sparetimelabs.com/purejavacomm/purejavacomm.php), each of which carries its own license and terms.
