@@ -19,11 +19,11 @@ currently built on top of
 
 tested devices and modes
 
-Device                                                                                    | Android ADB              | Android Bluetooth | Android OpenAccessory | PC USB | PC Bluetooth
-------------------------------------------------------------------------------------------|:------------------------:|:-----------------:|:---------------------:|:------:|:-----------:
-[IOIO](https://www.sparkfun.com/products/10585)                                           | Yes (Android OS < 4.2.2) | Yes               | Yes                   | N/A    | Yes
-[Droidalyzer](http://droidalyzer.com) / [IOIO Mint](http://www.adafruit.com/products/885) | Yes (Android OS < 4.2.2) | Yes               | Yes                   | N/A    | Yes 
-[IOIO-OTG](https://www.sparkfun.com/products/11343)                                       | Yes (Android OS < 4.2.2) | Yes               | Yes                   | Yes    | Yes
+Device                                                                                    | Android ADB              | Android Bluetooth | Android OpenAccessory (ADK) | PC USB | PC Bluetooth
+------------------------------------------------------------------------------------------|:------------------------:|:-----------------:|:---------------------------:|:------:|:-----------:
+[IOIO](https://www.sparkfun.com/products/10585)                                           | Yes (Android OS < 4.2.2) | Yes               | Yes                         | N/A    | Yes
+[Droidalyzer](http://droidalyzer.com) / [IOIO Mint](http://www.adafruit.com/products/885) | Yes (Android OS < 4.2.2) | Yes               | Yes                         | N/A    | Yes 
+[IOIO-OTG](https://www.sparkfun.com/products/11343)                                       | Yes (Android OS < 4.2.2) | Yes               | Yes                         | Yes    | Yes
 (thanks Jordan of SFE for the IOIO-OTG board!)
 
 A note about the "Android OS < 4.2.2" thing: [Secure USB Debugging](http://nelenkov.blogspot.com/2013/02/secure-usb-debugging-in-android-422.html) has been introduced in 4.2.2.
