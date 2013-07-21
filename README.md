@@ -21,9 +21,9 @@ tested devices and modes
 
 Device                                                                                    | Android ADB              | Android Bluetooth | Android OpenAccessory | PC USB | PC Bluetooth
 ------------------------------------------------------------------------------------------|:------------------------:|:-----------------:|:---------------------:|:------:|:-----------:
-[IOIO](https://www.sparkfun.com/products/10585)                                           | Yes (Android OS < 4.2.2) | Yes               | Not Tested            | N/A    | Yes
-[Droidalyzer](http://droidalyzer.com) / [IOIO Mint](http://www.adafruit.com/products/885) | Yes (Android OS < 4.2.2) | Yes               | Not Tested            | N/A    | Yes 
-[IOIO-OTG](https://www.sparkfun.com/products/11343)                                       | Yes (Android OS < 4.2.2) | Yes               | Not Tested            | Yes    | Yes
+[IOIO](https://www.sparkfun.com/products/10585)                                           | Yes (Android OS < 4.2.2) | Yes               | Yes                   | N/A    | Yes
+[Droidalyzer](http://droidalyzer.com) / [IOIO Mint](http://www.adafruit.com/products/885) | Yes (Android OS < 4.2.2) | Yes               | Yes                   | N/A    | Yes 
+[IOIO-OTG](https://www.sparkfun.com/products/11343)                                       | Yes (Android OS < 4.2.2) | Yes               | Yes                   | Yes    | Yes
 (thanks Jordan of SFE for the IOIO-OTG board!)
 
 A note about the "Android OS < 4.2.2" thing: [Secure USB Debugging](http://nelenkov.blogspot.com/2013/02/secure-usb-debugging-in-android-422.html) has been introduced in 4.2.2.
@@ -39,11 +39,9 @@ Install
 
 How to use
 ----------
-
-1. Instantiate a PIOIOManager: <code>PIOIOManager ioioManager = new PIOIOManager(this);</code>
-2. start it: <code> ioioManager.start();</code>
-3. define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
-4. (Android Mode): Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.  
+1. Instantiate and start a PIOIOManager in your sketch's setup function: <code>new PIOIOManager(this).start();</code>
+2. define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
+3. (Android Mode): Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.  
 
 Example: IOIOBlink.pde
 ----------------------
@@ -59,11 +57,9 @@ Example: IOIOBlink.pde
       //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
     }
 
-    PIOIOManager ioioManager = new PIOIOManager(this);
-
     void setup() {
       size(displayWidth, displayHeight);
-      ioioManager.start();
+      new PIOIOManager(this).start();
     }
 
     void draw() {

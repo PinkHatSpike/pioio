@@ -11,15 +11,13 @@ static {
 boolean state = false;
 DigitalOutput led;
 
-PIOIOManager ioioManager = new PIOIOManager(this);
-
 void setup() {
   size(displayWidth, displayHeight);
   rectMode(CENTER);
   stroke(0);
   fill(255, 255, 0);
 
-  ioioManager.start();
+  new PIOIOManager(this).start();
 }
 
 void draw() {
