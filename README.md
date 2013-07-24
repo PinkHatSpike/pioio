@@ -26,6 +26,9 @@ Device                                                                          
 [IOIO-OTG](https://www.sparkfun.com/products/11343)                                       | Yes (Android OS < 4.2.2) | Yes               | Yes                         | Yes    | Yes
 (thanks Jordan of SFE for the IOIO-OTG board!)
 
+See [IOIO Over OpenAccessory](https://github.com/ytai/ioio/wiki/IOIO-Over-OpenAccessory) for more info on IOIO's Accessory support.
+Also, check out the [Android Accessory Tool](https://github.com/PinkHatSpike/AndroidAccessoryTool) to easily add Android OpenAccessory support to your sketch.
+
 A note about the "Android OS < 4.2.2" thing: [Secure USB Debugging](http://nelenkov.blogspot.com/2013/02/secure-usb-debugging-in-android-422.html) has been introduced in 4.2.2.
 What this means is any host that wants to connect to an Android device will have to go through an RSA key-exchange dance to do so.
 The IOIO firmware does not (yet?) support RSA keys. To do so would mean some coding effort and compiling the IOIO firmware with libcrypto (which has its own export rules problems).
