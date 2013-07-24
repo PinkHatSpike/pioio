@@ -19,12 +19,15 @@ currently built on top of
 
 tested devices and modes
 
-Device                                                                                    | Android ADB              | Android Bluetooth | Android OpenAccessory | PC USB | PC Bluetooth
-------------------------------------------------------------------------------------------|:------------------------:|:-----------------:|:---------------------:|:------:|:-----------:
-[IOIO](https://www.sparkfun.com/products/10585)                                           | Yes (Android OS < 4.2.2) | Yes               | Not Tested            | N/A    | Yes
-[Droidalyzer](http://droidalyzer.com) / [IOIO Mint](http://www.adafruit.com/products/885) | Yes (Android OS < 4.2.2) | Yes               | Not Tested            | N/A    | Yes 
-[IOIO-OTG](https://www.sparkfun.com/products/11343)                                       | Yes (Android OS < 4.2.2) | Yes               | Not Tested            | Yes    | Yes
+Device                                                                                    | Android ADB              | Android Bluetooth | Android OpenAccessory (ADK) | PC USB | PC Bluetooth
+------------------------------------------------------------------------------------------|:------------------------:|:-----------------:|:---------------------------:|:------:|:-----------:
+[IOIO](https://www.sparkfun.com/products/10585)                                           | Yes (Android OS < 4.2.2) | Yes               | Yes                         | N/A    | Yes
+[Droidalyzer](http://droidalyzer.com) / [IOIO Mint](http://www.adafruit.com/products/885) | Yes (Android OS < 4.2.2) | Yes               | Yes                         | N/A    | Yes 
+[IOIO-OTG](https://www.sparkfun.com/products/11343)                                       | Yes (Android OS < 4.2.2) | Yes               | Yes                         | Yes    | Yes
 (thanks Jordan of SFE for the IOIO-OTG board!)
+
+See [IOIO Over OpenAccessory](https://github.com/ytai/ioio/wiki/IOIO-Over-OpenAccessory) for more info on IOIO's Accessory support.
+Also, check out the [Android Accessory Tool](https://github.com/PinkHatSpike/AndroidAccessoryTool) to easily add Android OpenAccessory support to your sketch.
 
 A note about the "Android OS < 4.2.2" thing: [Secure USB Debugging](http://nelenkov.blogspot.com/2013/02/secure-usb-debugging-in-android-422.html) has been introduced in 4.2.2.
 What this means is any host that wants to connect to an Android device will have to go through an RSA key-exchange dance to do so.
@@ -39,11 +42,9 @@ Install
 
 How to use
 ----------
-
-1. Instantiate a PIOIOManager: <code>PIOIOManager ioioManager = new PIOIOManager(this);</code>
-2. start it: <code> ioioManager.start();</code>
-3. define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
-4. (Android Mode): Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.  
+1. Instantiate and start a PIOIOManager in your sketch's setup function: <code>new PIOIOManager(this).start();</code>
+2. define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
+3. (Android Mode): Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.  
 
 Example: IOIOBlink.pde
 ----------------------
@@ -59,11 +60,9 @@ Example: IOIOBlink.pde
       //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
     }
 
-    PIOIOManager ioioManager = new PIOIOManager(this);
-
     void setup() {
       size(displayWidth, displayHeight);
-      ioioManager.start();
+      new PIOIOManager(this).start();
     }
 
     void draw() {

@@ -29,11 +29,23 @@ import android.content.ContextWrapper;
 
 import processing.core.PApplet;
 
+import java.util.Collection;
+import ioio.lib.spi.IOIOConnectionBootstrap;
+import ioio.lib.util.android.ContextWrapperDependent;
+import ioio.lib.util.IOIOConnectionRegistry;
+
 public class PIOIOManager extends IOIOAndroidApplicationHelper {
     private static final String TAG = "PIOIOManagerAndroid";
     
     public PIOIOManager(PApplet wrapper, IOIOLooperProvider provider) {
         super(wrapper, provider);
+        
+        Collection<IOIOConnectionBootstrap> bootstraps_ = IOIOConnectionRegistry.getBootstraps();
+        for (IOIOConnectionBootstrap bootstrap : bootstraps_) {
+            if (bootstrap instanceof ContextWrapperDependent) {
+                ((ContextWrapperDependent) bootstrap).onCreate(wrapper);
+            }
+        }
     }
     
     public PIOIOManager(PApplet applet) {
