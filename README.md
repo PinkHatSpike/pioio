@@ -36,7 +36,7 @@ For now, ADB on OS 4.2.2 is a no-go.
 
 Install
 -------
-1. Download the [latest master zip](https://github.com/PinkHatSpike/pioio/archive/master.zip).
+1. Download the [latest master zip](https://github.com/PinkHatSpike/pioio/archive/app-400rc.zip).
 2. Rename downloaded zip file to pioio.zip, and unzip it.
 3. Copy folder to your sketchbook's library folder (see [How to Install a Contributed Library](http://wiki.processing.org/w/How_to_Install_a_Contributed_Library))
 
