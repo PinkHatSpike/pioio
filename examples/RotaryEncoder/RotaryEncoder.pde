@@ -19,7 +19,6 @@ static {
  * B - pin 4
  */
 
-PIOIOManager ioioManager = new PIOIOManager(this);
 Encoder encoder;
 int count = 0;
 
@@ -28,7 +27,7 @@ void setup() {
   textAlign(CENTER, CENTER);
   textSize(128);
   ellipseMode(CENTER);
-  ioioManager.start();
+  new PIOIOManager(this).start();
 }
 
 void draw() {

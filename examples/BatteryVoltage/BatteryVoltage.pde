@@ -16,14 +16,12 @@ import java.text.DecimalFormat;
 float batteryVoltage = 0.0;
 AnalogInput batteryIn;
 
-PIOIOManager ioioManager = new PIOIOManager(this); 
-
 void setup() {
   size(displayWidth, displayHeight);
   textAlign(CENTER, CENTER);
   textSize(128);
 
-  ioioManager.start();
+  new PIOIOManager(this).start();
 }
 
 void draw() {

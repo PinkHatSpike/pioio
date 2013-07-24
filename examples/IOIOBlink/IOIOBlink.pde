@@ -8,11 +8,9 @@ static {
   //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
 }
 
-PIOIOManager ioioManager = new PIOIOManager(this);
-
 void setup() {
   size(displayWidth, displayHeight);
-  ioioManager.start();
+  new PIOIOManager(this).start();
 }
 
 void draw() {

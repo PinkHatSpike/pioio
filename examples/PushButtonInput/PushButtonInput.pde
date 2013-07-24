@@ -16,7 +16,6 @@ static {
  push button hooked up to 3.3v and to pin 10 of IOIO
  */
 
-PIOIOManager ioioManager = new PIOIOManager(this);
 DigitalInput pushButton;
 boolean pushButtonState = false;
 
@@ -27,7 +26,7 @@ void setup() {
   stroke(0);
   strokeWeight(5);
 
-  ioioManager.start();
+  new PIOIOManager(this).start();
 }
 
 void draw() {
