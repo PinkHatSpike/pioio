@@ -8,7 +8,7 @@
     <property name="src.pioio.ioiolibapi.dir" value="${src.pioio.top.dir}/ioio/lib/api" />
     <property name="src.pioio.ioiolibapiexception.dir" value="${src.pioio.ioiolibapi.dir}/exception" />
     
-    <property name="src.ioio.dir" value="src/App-IOIO0330" />
+    <property name="src.ioio.dir" value="src/App-IOIO0400" />
     <property name="ioio.android.jar.dir" value="${src.ioio.dir}/IOIOLib/target/android/bin" />
     <property name="ioio.android.accessory.jar.dir" value="${src.ioio.dir}/IOIOLibAccessory/bin" />
     <property name="ioio.android.bt.jar.dir" value="${src.ioio.dir}/IOIOLibBT/bin" />

@@ -14,7 +14,7 @@ and of course
 * [Processing](http://processing.org/)
 
 currently built on top of
-* IOIOLib v3.30 (App-IOIO0330)
+* IOIOLib v4.00 release candidate (App-IOIO0400)
 * Processing 2.0
 
 tested devices and modes
