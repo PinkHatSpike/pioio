@@ -8,8 +8,11 @@ static {
   //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
 }
 
+PIOIOManager ioioManager;
+
 void setup() {
-  new PIOIOManager(this).start();
+  ioioManager = new PIOIOManager(this);
+  ioioManager.start();
 }
 
 void draw() {
@@ -25,4 +28,13 @@ void ioioLoop(IOIO ioio) throws ConnectionLostException {
   catch (InterruptedException e) {
   }
 }
+
+// optional methods
+// void ioioDisconnected(IOIO ioio) {
+//   
+// }
+// 
+// void ioioIncompatible(IOIO ioio) {
+//   
+// }
 

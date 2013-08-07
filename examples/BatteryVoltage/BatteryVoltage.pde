@@ -13,6 +13,7 @@ import java.text.DecimalFormat;
 // displays the LIPO battery voltage
 // on Droidalyzer / IOIOMint, battery voltage can be read on pin 41
 
+PIOIOManager ioioManager;
 float batteryVoltage = 0.0;
 AnalogInput batteryIn;
 
@@ -21,7 +22,8 @@ void setup() {
   textAlign(CENTER, CENTER);
   textSize(128);
 
-  new PIOIOManager(this).start();
+  ioioManager = new PIOIOManager(this);
+  ioioManager.start();
 }
 
 void draw() {

@@ -29,19 +29,32 @@ public class PIOIOLooperProvider implements IOIOLooperProvider {
     private static final String TAG = "PIOIOLooperProvider";
     
     PApplet _applet;
+    CreateIOIOLooperListener _createIOIOLooperListener;
     
     public PIOIOLooperProvider(PApplet applet) {
         _applet = applet;
+    }
+    
+    public void setCreateIOIOLooperListener(CreateIOIOLooperListener CreateIOIOLooperListener) {
+        _createIOIOLooperListener = CreateIOIOLooperListener;
     }
     /**
     * IOIOLooperProvider stuff
     */
     @Override
     public IOIOLooper createIOIOLooper(String connectionType, Object extra) {
-        return this.createIOIOLooper();
+        PIOIOLooper ioioLooper = new PIOIOLooper(_applet);
+        if(_createIOIOLooperListener != null) {
+            _createIOIOLooperListener.onLooperCreate(ioioLooper, connectionType, extra);
+        }
+        return ioioLooper;
     }
 
     protected IOIOLooper createIOIOLooper() {
-        return new PIOIOLooper(_applet);
+        PIOIOLooper ioioLooper = new PIOIOLooper(_applet);
+        if(_createIOIOLooperListener != null) {
+            _createIOIOLooperListener.onLooperCreate(ioioLooper, null, null);
+        }
+        return ioioLooper;
     }
 }

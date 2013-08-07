@@ -22,6 +22,8 @@ package com.pinkhatproductions.pioio;
 
 import com.pinkhatproductions.pioio.PIOIOLooperProvider;
 import ioio.lib.util.android.IOIOAndroidApplicationHelper;
+import ioio.lib.api.IOIO;
+import ioio.lib.util.IOIOLooper;
 import ioio.lib.util.IOIOLooperProvider;
 import ioio.lib.android.bluetooth.*;
 import ioio.lib.android.accessory.*;
@@ -34,11 +36,17 @@ import ioio.lib.spi.IOIOConnectionBootstrap;
 import ioio.lib.util.android.ContextWrapperDependent;
 import ioio.lib.util.IOIOConnectionRegistry;
 
-public class PIOIOManager extends IOIOAndroidApplicationHelper {
+import java.util.ArrayList;
+import java.util.List;
+
+public class PIOIOManager extends IOIOAndroidApplicationHelper implements CreateIOIOLooperListener {
     private static final String TAG = "PIOIOManagerAndroid";
+    List<IOIOConnectionInfo> _connections;
     
     public PIOIOManager(PApplet wrapper, IOIOLooperProvider provider) {
         super(wrapper, provider);
+        
+        _connections = new ArrayList<IOIOConnectionInfo>();
         
         Collection<IOIOConnectionBootstrap> bootstraps_ = IOIOConnectionRegistry.getBootstraps();
         for (IOIOConnectionBootstrap bootstrap : bootstraps_) {
@@ -50,5 +58,21 @@ public class PIOIOManager extends IOIOAndroidApplicationHelper {
     
     public PIOIOManager(PApplet applet) {
         this(applet, new PIOIOLooperProvider(applet));
+        ((PIOIOLooperProvider)looperProvider_).setCreateIOIOLooperListener(this);
+    }
+    
+    // for CreateIOIOLooperListener
+    @Override
+    public void onLooperCreate(PIOIOLooper looper, String connectionType, Object extra) {
+        _connections.add(new IOIOConnectionInfo(looper, connectionType, extra));
+    }
+    
+    public String connectionType(IOIO ioio) {
+        for(IOIOConnectionInfo info : _connections) {
+            if(info._looper.ioio() == ioio) {
+                return info._connectionType;
+            }
+        }
+        return null;
     }
 }

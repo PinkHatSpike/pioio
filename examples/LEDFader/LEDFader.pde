@@ -8,6 +8,7 @@ static {
   //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
 }
 
+PIOIOManager ioioManager;
 PwmOutput led; 
 float dutyCycle = 0.0;
 
@@ -18,7 +19,8 @@ void setup() {
   textAlign(CENTER, CENTER);
   textSize(128);
 
-  new PIOIOManager(this).start();
+  ioioManager = new PIOIOManager(this);
+  ioioManager.start();
 }
 
 void draw() {

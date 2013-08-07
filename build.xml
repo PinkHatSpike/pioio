@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <project name="pioio" basedir="." default="install">
+    <presetdef name="javac">
+        <javac includeantruntime="false" />
+    </presetdef>
+    
     <property name="src.pioio.top.dir" value="src/pioio" />
     <property name="src.pioio.pinkhatproductions.dir" value="${src.pioio.top.dir}/com/pinkhatproductions" />
     <property name="src.pioio.common.dir" value="${src.pioio.pinkhatproductions.dir}/pioio" />

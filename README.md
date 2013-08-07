@@ -44,7 +44,8 @@ How to use
 ----------
 1. Instantiate and start a PIOIOManager in your sketch's setup function: <code>new PIOIOManager(this).start();</code>
 2. define functions <code>void ioioSetup(IOIO ioio)</code> and <code>void ioioLoop(IOIO ioio)</code> in your main sketch.
-3. (Android Mode): Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.  
+3. (OPTIONAL) define functions <code>void ioioDisconnected(IOIO ioio)</code> and  <code>void ioioIncompatible(IOIO ioio)</code> in your main sketch.
+4. (Android Mode): Don't forget to enable Internet (for USB ADB connections) and/or Bluetooth (for bluetooth dongle connections) Android permissions in your sketch.  
 
 Example: IOIOBlink.pde
 ----------------------
@@ -90,6 +91,15 @@ Example: IOIOBlink.pde
       }
     }
 
+    // optional methods
+    // void ioioDisconnected(IOIO ioio) {
+    //   
+    // }
+    // 
+    // void ioioIncompatible(IOIO ioio) {
+    //   
+    // }
+    
 </code>
 
 License

@@ -18,12 +18,15 @@ static {
  center pot pin to IOIO pin 39 
  */
 
+PIOIOManager ioioManager;
 AnalogInput potentiometer;
 float potValue = 0.0;
 
 void setup() {
   size(displayWidth, displayHeight);
-  new PIOIOManager(this).start();
+  
+  ioioManager = new PIOIOManager(this);
+  ioioManager.start();
 }
 
 void draw() {

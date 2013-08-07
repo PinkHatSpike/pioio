@@ -8,6 +8,7 @@ static {
   //System.setProperty("ioio.SerialPorts", "/dev/tty.usbmodem1411");
 }
 
+PIOIOManager ioioManager;
 boolean state = false;
 DigitalOutput led;
 
@@ -17,7 +18,8 @@ void setup() {
   stroke(0);
   fill(255, 255, 0);
 
-  new PIOIOManager(this).start();
+  ioioManager = new PIOIOManager(this);
+  ioioManager.start();
 }
 
 void draw() {
